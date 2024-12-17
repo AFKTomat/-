@@ -1,0 +1,238 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-image: url('https://i.pinimg.com/originals/dc/a4/2e/dca42e69596b9b7680fc2d5534a19517.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center 20%;
+}
+
+header {
+  background-color: #610a94;
+  color: rgb(255, 245, 245);
+  padding: 15px;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 15px;
+}
+
+nav ul li a {
+  color: rgb(216, 212, 212);
+  text-decoration: none;
+}
+
+main {
+  padding: 20px;
+}
+
+.catalog, .game-detail {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.catalog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game-container {
+    overflow-x: hidden;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.game-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: fit-content;
+    margin-bottom: 300px;
+}
+
+.game-card {
+  border: 1px solid #ccc;
+  padding: 15px;
+  width: 250px;
+  margin-right: 20px;
+  text-align: center;
+  background-color: #27d1989a;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.game-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 40px 40px rgba(0, 255, 255, 0.616);
+}
+
+.game-card img {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  border-radius: 10px 10px 0 0;
+}
+
+.price {
+  font-weight: bold;
+  color: #d9534f;
+}
+
+button {
+  background-color: #244280;
+  color: rgba(255, 255, 255, 0.973);
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #ff0000;
+}
+
+footer {
+  text-align: center;
+  padding: 40px;
+  background-color: #610a94;
+  color: rgb(255, 255, 255);
+  margin-top: 570px;
+}
+
+.footer-text {
+  margin-top: 20px;
+}
+
+#cart-toggle-button {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background-color: #ce720967;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1001;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#cart-toggle-button:hover {
+  background-color: #08ffff;
+}
+
+.cart-icon {
+  width: 24px;
+  height: 24px;
+}
+
+#floating-cart {
+  position: fixed;
+  top: 60px;
+  right: 20px;
+  width: 250px;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(100%);
+}
+
+#floating-cart.cart-visible {
+  transform: translateX(0);
+}
+
+#floating-cart h3 {
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+}
+
+#cart-items {
+  max-height: 400px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+#checkout-button {
+  background-color: #244280;
+  color: rgb(252, 255, 255);
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+#checkout-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.top-game-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.top-game-wrapper .game-card {
+  width: 400px;
+  margin-right: 400px;
+}
+
+.top-game-wrapper .game-card:last-child {
+  margin-right: 0;
+}
+
+@keyframes carousel {
+  0% {
+      transform: translateX(-100%);
+  }
+  100% {
+      transform: translateX(+100%);
+  }
+}
+
+.top-game-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 40px;
+  overflow: hidden;
+  position: relative;
+}
+
+.top-game-wrapper .game-card {
+  width: 250px;
+  margin-right: 30px;
+  flex-shrink: 0;
+}
+
+.top-game-wrapper .game-card:last-child {
+  margin-right: 0;
+}
+
+.top-game-wrapper.carousel-animated {
+  animation: carousel 12s linear infinite;
+}

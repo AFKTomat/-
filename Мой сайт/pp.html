@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урна</title>
+    <link rel="stylesheet" href="xx.css">
+</head>
+<body>
+    <header>
+        <h1>Магазин Видео Игр</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Главная</a></li>
+                <li><a href="#catalog">Каталог</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <button id="cart-toggle-button" onclick="toggleCart()">
+        <img src="https://www.flaticon.com/ru/free-icon/shopping-basket_1077979?term=%D0%BA%D0%BE%D1%80%D0%B7%D0%B8%D0%BD%D0%B0&page=1&position=11&origin=tag&related_id=1077979" alt="Корзина" class="cart-icon">
+    </button>
+
+    <div id="floating-cart" class="cart-hidden">
+        <h3><img src="https://www.flaticon.com/ru/free-icon/shopping-basket_1077979?term=%D0%BA%D0%BE%D1%80%D0%B7%D0%B8%D0%BD%D0%B0&page=1&position=11&origin=tag&related_id=1077979" alt="Корзина" class="cart-icon"> Корзина</h3>
+        <div id="cart-items">
+            <p>Корзина пуста</p>
+        </div>
+        <button id="checkout-button" onclick="checkout()" disabled>Оформить заказ</button>
+    </div>
+
+    <main>
+        <section id="catalog">
+            <h2>Каталог Игр</h2>
+            <div class="game-container">
+                <div class="top-game-wrapper carousel-animated">
+                    <!-- Вставьте фото иконки для The Witcher 3 -->
+                    <div class="game-card">
+                        <img src="https://i.pinimg.com/originals/7b/b2/88/7bb2880c531d87b44df4ec0690edae9c.jpg" alt="The Witcher 3">
+                        <h3>The Witcher 3</h3>
+                        <p>Описание игры The Witcher 3</p>
+                        <p class="price">2000 руб.</p>
+                        <button onclick="addToCart('The Witcher 3', 2000)">Добавить</button>
+                    </div>
+                    <!-- Вставьте фото иконки для Cyberpunk 2077 -->
+                    <div class="game-card">
+                        <img src="https://avatars.mds.yandex.net/i?id=820543f0baeb7611ed4a7e01dca69273_l-5905521-images-thumbs&n=13" alt="Cyberpunk 2077">
+                        <h3>Cyberpunk 2077</h3>
+                        <p>Описание игры Cyberpunk 2077</p>
+                        <p class="price">3000 руб.</p>
+                        <button onclick="addToCart('Cyberpunk 2077', 3000)">Добавить</button>
+                    </div>
+                    <!-- Вставьте фото иконки для Minecraft -->
+                    <div class="game-card">
+                        <img src="https://avatars.mds.yandex.net/i?id=a3dafce049122ef1f586f9612fb52dce_l-4944757-images-thumbs&n=13" alt="Minecraft">
+                        <h3>Minecraft</h3>
+                        <p>Описание игры Minecraft</p>
+                        <p class="price">1500 руб.</p>
+                        <button onclick="addToCart('Minecraft', 1500)">Добавить</button>
+                    </div>
+                    <!-- Вставьте фото иконки для Fortnite -->
+                    <div class="game-card">
+                        <img src="https://i.playground.ru/p/F9RogVWvcWGqHPdOLPWnCw.jpeg" alt="Fortnite">
+                        <h3>Fortnite</h3>
+                        <p>Описание игры Fortnite</p>
+                        <p class="price">0 руб.</p>
+                        <button onclick="addToCart('Fortnite', 0)">Добавить</button>
+                    </div>
+                    <!-- Вставьте фото иконки для Grand Theft Auto V -->
+                    <div class="game-card">
+                        <img src="https://avatars.mds.yandex.net/i?id=bbc204061d31d1f6be0449ae1af6428d_l-5310863-images-thumbs&n=13" alt="Grand Theft Auto V">
+                        <h3>Grand Theft Auto V</h3>
+                        <p>Описание игры Grand Theft Auto V</p>
+                        <p class="price">2500 руб.</p>
+                        <button onclick="addToCart('Grand Theft Auto V', 2500)">Добавить</button>
+                    </div>
+                    <!-- Вставьте фото иконки для Red Dead Redemption 2 -->
+                    <div class="game-card">
+                        <img src="https://digiseller.mycdn.ink/preview/1253594/p1_4171005_ab8ee3b5.jpg" alt="Red Dead Redemption 2">
+                        <h3>Red Dead Redemption 2</h3>
+                        <p>Описание игры Red Dead Redemption 2</p>
+                        <p class="price">3500 руб.</p>
+                        <button onclick="addToCart('Red Dead Redemption 2', 3500)">Добавить</button>
+                    </div>
+                </div>
+        
+                <div class="game-wrapper">
+                    <!-- Вставьте фото иконки для Игры 1 -->
+                    <div class="game-card">
+                        <img src="https://avatars.mds.yandex.net/get-mpic/11368570/2a0000018b432c2685e43e48350a57eb35ae/orig" alt="Subnautica">
+                        <h3>Subnautica</h3>
+                        <p>Subnautica</p>
+                        <p class="price">1000 руб.</p>
+                        <button onclick="addToCart('Игра 1', 1000)">Добавить</button>
+                    </div>
+                    <!-- Вставьте фото иконки для Игры 2 -->
+                    <div class="game-card">
+                        <img src="https://avatars.mds.yandex.net/i?id=bc0fcb9a4146948cfa1b984516bad580_l-4298456-images-thumbs&n=13" alt="Slime Rancher 2">
+                        <h3>Slime Rancher 2</h3>
+                        <p>Описание игры 2</p>
+                        <p class="price">1500 руб.</p>
+                        <button onclick="addToCart('Игра 2', 1500)">Добавить</button>
+                    </div>
+                    <!-- Вставьте фото иконки для Игры 3 -->
+                    <div class="game-card">
+                        <img src="https://i.playground.ru/p/NwMiUuIYhzk075_qcvj2IQ.jpeg" alt="Manor Lords">
+                        <h3>v</h3>
+                        <p>Описание игры 3</p>
+                        <p class="price">2000 руб.</p>
+                        <button onclick="addToCart('Игра 3', 2000)">Добавить</button>
+                    </div>
+                    <!-- Вставьте фото иконки для Игры 4 -->
+                    <div class="game-card">
+                        <img src="https://i.playground.ru/e/8EurJkDWGAj3WjaqL7j7Fg.jpeg" alt="DRAGON BALL Z: KAKAROT">
+                        <h3>DRAGON BALL Z: KAKAROT</h3>
+                        <p>Описание игры 4</p>
+                        <p class="price">2500 руб.</p>
+                        <button onclick="addToCart('Игра 4', 2500)">Добавить</button>
+                    </div>
+                    <!-- Вставьте фото иконки для Игры 5 -->
+                    <div class="game-card">
+                        <img src="https://img.youtube.com/vi/kpmOhBWlDfc/maxresdefault.jpg" alt="NARUTO X BORUTO Ultimate Ninja STORM CONNECTIONS">
+                        <h3>NARUTO X BORUTO Ultimate Ninja STORM CONNECTIONS</h3>
+                        <p>Описание игры 5</p>
+                        <p class="price">3000 руб.</p>
+                        <button onclick="addToCart('Игра 5', 3000)">Добавить</button>
+                    </div>
+                    <!-- Вставьте фото иконки для Игры 6 -->
+                    <div class="game-card">
+                        <img src="https://i.ytimg.com/vi/7mRmfx-lxv0/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-DoACuAiKAgwIABABGDIgWChyMA8=&rs=AOn4CLDVWHjf0w3HBcioK_R0uFWiv6v1Gw" alt="Little Nightmares I & II">
+                        <h3>Little Nightmares I & II</h3>
+                        <p>Описание игры 6</p>
+                        <p class="price">3500 руб.</p>
+                        <button onclick="addToCart('Игра 6', 3500)">Добавить</button>
+                    </div>
+                </div>
+        
+                <div class="game-wrapper">
+                    <!-- Вставьте фото иконки для Игры 7 -->
+                    <div class="game-card">
+                        <img src="https://avatars.mds.yandex.net/i?id=149d05ad995a3958f28da5e839172cda_l-3006166-images-thumbs&n=13" alt="GOD EATER 3">
+                        <h3>GOD EATER 3</h3>
+                        <p>Описание игры 7</p>
+                        <p class="price">1200 руб.</p>
+                        <button onclick="addToCart('Игра 7', 1200)">Добавить</button>
+                    </div>
+                    <!-- Вставьте фото иконки для Игры 8 -->
+                    <div class="game-card">
+                        <img src="https://i.ytimg.com/vi/UABQQ5TyGNU/maxresdefault.jpg" alt="ИELDEN RING NIGHTREIGN">
+                        <h3>ИELDEN RING NIGHTREIGN</h3>
+                        <p>Описание игры 8</p>
+                        <p class="price">1800 руб.</p>
+                        <button onclick="addToCart('Игра 8', 1800)">Добавить</button>
+                    </div>
+                    <!-- Вставьте фото иконки для Игры 9 -->
+                    <div class="game-card">
+                        <img src="https://avatars.mds.yandex.net/i?id=9ff7b072644123a947c19eef8bcc5ac5_l-10952687-images-thumbs&n=13" alt="Warhammer 40,000: Space Marine 2">
+                        <h3>Warhammer 40,000: Space Marine 2</h3>
+                        <p>Описание игры 9</p>
+                        <p class="price">2200 руб.</p>
+                        <button onclick="addToCart('Игра 9', 2200)">Добавить</button>
+                    </div>
+                    <!-- Вставьте фото иконки для Игры 10 -->
+                    <div class="game-card">
+                        <img src="https://img.youtube.com/vi/1xGiPUeevCM/maxresdefault.jpg" alt="Black Myth: Wukong">
+                        <h3>Black Myth: Wukong  </h3>
+                        <p>Описание игры 10</p>
+                        <p class="price">2700 руб.</p>
+                        <button onclick="addToCart('Игра 10', 2700)">Добавить</button>
+                    </div>
+                    <!-- Вставьте фото иконки для Игры 11 -->
+                    <div class="game-card">
+                        <img src="https://i.playground.ru/p/ddySrFFK8Jum_AdX5qQpmQ.jpeg" alt="Warframe">
+                        <h3>Warframe</h3>
+                        <p>Описание игры 11</p>
+                        <p class="price">3200 руб.</p>
+                        <button onclick="addToCart('Игра 11', 3200)">Добавить</button>
+                    </div>
+                    <!-- Вставьте фото иконки для Игры 12 -->
+                    <div class="game-card">
+                        <img src="https://avatars.mds.yandex.net/i?id=d0595f68791f5bc13e32b76c78d388db_l-12371092-images-thumbs&n=13" alt="Palworld">
+                        <h3>Palworld</h3>
+                        <p>Описание игры 12</p>
+                        <p class="price">3700 руб.</p>
+                        <button onclick="addToCart('Игра 12', 3700)">Добавить</button>
+                    </div>
+                </div>
+        
+                <div class="game-wrapper">
+                    <!-- Вставьте фото иконки для Игры 13 -->
+                    <div class="game-card">
+                        <img src="https://i.ytimg.com/vi/64aonbg_93I/maxresdefault.jpg" alt="Black Desert">
+                        <h3>Black Desert</h3>
+                        <p>Описание игры 13</p>
+                        <p class="price">1300 руб.</p>
+                        <button onclick="addToCart('Игра 13', 1300)">Добавить</button>
+                    </div>
+                    <!-- Вставьте фото иконки для Игры 14 -->
+                    <div class="game-card">
+                        <img src="https://i.playground.ru/e/tpSmIL-iaucmldmBQ4-2tA.jpeg" alt="Lies of P">
+                        <h3>Lies of P</h3>
+                        <p>Описание игры 14</p>
+                        <p class="price">1900 руб.</p>
+                        <button onclick="addToCart('Игра 14', 1900)">Добавить</button>
+                    </div>
+                    <!-- Вставьте фото иконки для Игры 15 -->
+                    <div class="game-card">
+                        <img src="https://clan.akamai.steamstatic.com/images/5377070/34fdd53e0ebcfe5ca99ddaea06436afd51b13c6f.png" alt="Rust - Voice Props Pack">
+                        <h3>Rust - Voice Props Pack</h3>
+                        <p>Описание игры 15</p>
+                        <p class="price">2300 руб.</p>
+                        <button onclick="addToCart('Игра 15', 2300)">Добавить</button>
+                    </div>
+                    <!-- Вставьте фото иконки для Игры 16 -->
+                    <div class="game-card">
+                        <img src="https://avatars.mds.yandex.net/get-mpic/12351018/2a0000018d73bc8f828f5fd58e9d6cd9fca6/orig" alt="ONE PIECE ODYSSEY">
+                        <h3>ONE PIECE ODYSSEY</h3>
+                        <p>Описание игры 16</p>
+                        <p class="price">2800 руб.</p>
+                        <button onclick="addToCart('Игра 16', 2800)">Добавить</button>
+                    </div>
+                    <!-- Вставьте фото иконки для Игры 17 -->
+                    <div class="game-card">
+                        <img src="https://i.playground.ru/e/be9lW4-ElgmhfgvZl42HEg.jpeg" alt="FINAL FANTASY VII EVER CRISIS">
+                        <h3>FINAL FANTASY VII EVER CRISIS</h3>
+                        <p>Описание игры 17</p>
+                        <p class="price">3300 руб.</p>
+                        <button onclick="addToCart('Игра 17', 3300)">Добавить</button>
+                    </div>
+                    <!-- Вставьте фото иконки для Игры 18 -->
+                    <div class="game-card">
+                        <img src="https://i.pinimg.com/originals/77/96/10/7796103aaebbbd50d7567be358f400dd.jpg" alt="CODE VEIN">
+                        <h3>CODE VEIN</h3>
+                        <p>Описание игры 18</p>
+                        <p class="price">3800 руб.</p>
+                        <button onclick="addToCart('Игра 18', 3800)">Добавить</button>
+                    </div>
+                </div>
+         </section>
+    </main>
+
+    <footer>
+        <section id="contacts" class="contacts">
+            <h2>Контакты</h2>
+            <p>Если у вас есть вопросы, свяжитесь с нами:</p>
+            <ul>
+                <li>Телефон: +7 (123) 456-78-90</li>
+                <li>Email: support@gamestore.ru</li>
+                <li>Адрес: ул. Примерная, 1, Москва, Россия</li>
+            </ul>
+        </section>
+        <p class="footer-text">&copy; 2024 Магазин Видео Игр. Все права защищены.</p>
+    </footer>
+
+    <script src="ww.js"></script>
+</body>
+</html>
